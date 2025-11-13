@@ -1,0 +1,7 @@
+general:
+  kafka-topic: test-topic
+spring:
+  kafka:
+    consumer:
+      group-id: midas-group
+      auto-offset-reset: earliest
