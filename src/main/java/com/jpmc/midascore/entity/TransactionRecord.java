@@ -31,6 +31,9 @@ public class TransactionRecord {
     @Column(nullable = false)
     private BigDecimal amount;
 
+    @Column(nullable = true)
+    private BigDecimal incentive;
+
     @Column(name = "created_at", nullable = false, updatable = false)
     private Long createdAt;
 
@@ -79,6 +82,14 @@ public class TransactionRecord {
         this.amount = amount;
     }
 
+    public BigDecimal getIncentive() {
+        return incentive;
+    }
+
+    public void setIncentive(BigDecimal incentive) {
+        this.incentive = incentive;
+    }
+
     public Long getCreatedAt() {
         return createdAt;
     }
@@ -94,6 +105,7 @@ public class TransactionRecord {
                 ", sender=" + sender.getId() +
                 ", recipient=" + recipient.getId() +
                 ", amount=" + amount +
+                ", incentive=" + incentive +
                 ", createdAt=" + createdAt +
                 '}';
     }
